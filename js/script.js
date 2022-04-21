@@ -39,24 +39,23 @@ document.getElementById("play").addEventListener("click",stampaDom());
 function creaSquare(target) {
     const quadrato = document.createElement("div");
     quadrato.className = "square" ;
-    quadrato.innerHTML = `<span>${numeriRandom(1,100)}</span>`
     target.append(quadrato);
     return quadrato;
+    
     
        
 }
 
 //function numeri random
-function numeriRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 
 // function ciclo per stamapare gli square nel DOM
 
 function stampaDom(params) {
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 1; i <= 100 ; i++) {
         const quadrato = creaSquare(container);
+        quadrato.innerHTML = `<span>${i}</span>`
         quadrato.addEventListener("click", function(){
             this.classList.add("active")
         })
